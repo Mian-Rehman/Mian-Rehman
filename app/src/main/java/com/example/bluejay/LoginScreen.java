@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,6 +18,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.bluejay.Model.Users;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -29,6 +31,12 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 public class LoginScreen extends AppCompatActivity {
 
@@ -77,6 +85,9 @@ public class LoginScreen extends AppCompatActivity {
 
 
         mAuth = FirebaseAuth.getInstance();
+        DatabaseReference reference= FirebaseDatabase.getInstance().getReference("Users");
+
+
 
         btn_Signup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,7 +103,74 @@ public class LoginScreen extends AppCompatActivity {
         btn_Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(LoginScreen.this, "Login Button Demo App", Toast.LENGTH_SHORT).show();
+
+
+                String LoginUserName=ed_login_user.getText().toString().trim();
+                String LoginPassword=ed_login_pass.getText().toString();
+
+                Query check_user_Details =reference.orderByChild("userName").equalTo(LoginUserName);
+
+                check_user_Details.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                        if (snapshot.exists()) {
+                            String checkUser = snapshot.child(LoginUserName).child("userName").getValue(String.class);
+                            String checkpass = snapshot.child(LoginUserName).child("userPassword").getValue(String.class);
+
+
+                            if (checkUser.equals(LoginUserName))
+                            {
+
+
+                                if (checkpass.equals(LoginPassword))
+                                {
+                                    Users user =snapshot.child(LoginUserName).getValue(Users.class);
+
+                                    SharedPreferences sp=getSharedPreferences("USERDATA",MODE_PRIVATE);
+                                    SharedPreferences.Editor ed=sp.edit();
+                                    ed.putString("currentUserName",user.getUserName());
+                                    ed.putString("currentName",user.getName());
+                                    ed.putString("currentPhoneNo",user.getUserPhoneNo());
+                                    ed.putString("currentEmail",user.getUserEmail());
+                                    ed.putString("currentPassword",user.getUserPassword());
+                                    ed.apply();
+                                    Intent intent=new Intent(LoginScreen.this,MainDashboard.class);
+                                    startActivity(intent);
+                                    finish();
+                                }
+                                else
+                                {
+                                    ed_login_pass.setError("incorrect password");
+                                    ed_login_pass.requestFocus();
+                                    ed_login_pass.setText("");
+
+                                }
+
+
+                            }
+                            else
+                                {
+                                ed_login_user.setError("incorrect username");
+                                ed_login_user.requestFocus();
+                                ed_login_user.setText("");
+                                return;
+                            }
+
+                        }
+
+
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
+
+
             }
         });
 
