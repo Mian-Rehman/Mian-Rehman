@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".FragPhoneLogin">
+
+
+
+
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical"
+
+       >
+      <Toolbar
+          android:id="@+id/Toolbar_PhoneVErify"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:title="Phone Verification"
+          android:titleTextColor="@color/white"
+          android:background="@color/Light_Blue"
+          android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
+          android:textAlignment="center"
+          android:navigationIcon="@drawable/ic_arrow_back"
+          tools:targetApi="lollipop"
+          android:gravity="center_horizontal">
+
+      </Toolbar>
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+          android:background="#D3E6E9"
+          android:padding="30dp"
+
+          >
+
+
+         <ImageView
+             android:layout_width="100dp"
+             android:layout_height="100dp"
+               android:src="@drawable/ic_phone"
+             android:layout_gravity="center"
+            />
+
+      </LinearLayout>
+
+
+      <LinearLayout
+          android:id="@+id/layout_number"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:padding="30dp"
+          android:layout_gravity="center"
+          android:gravity="center"
+          android:orientation="vertical"
+         >
+
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+            android:text="Phone Number"
+             android:gravity="center"
+             android:textSize="20sp"
+             android:paddingLeft="10dp"
+             android:paddingRight="10dp"
+             android:textColor="@color/Dark_Blue"
+             android:fontFamily="sans-serif-black"
+            />
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="Please enter your phone number to continue"
+             android:gravity="center"
+             android:textSize="12sp"
+             android:textColor="@color/Dark_Blue"
+
+             />
+
+         <EditText
+             android:id="@+id/ed_Number"
+             android:layout_width="200dp"
+             android:layout_height="wrap_content"
+            android:hint="+92********"
+             android:textAlignment="center"
+             android:gravity="center_horizontal"
+             android:textSize="12sp"
+             android:padding="10dp"
+             android:layout_marginTop="10dp"
+             android:textColorHint="#CD3B5774"
+             />
+
+         <Button
+             android:id="@+id/btn_Next_Phone"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+            android:text="Next"
+             android:padding="15dp"
+             android:layout_marginTop="10dp"
+             android:textAllCaps="false"
+             android:background="@color/Light_Blue"
+             android:textColor="@color/white"
+
+
+             />
+
+      </LinearLayout>
+
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:gravity="center"
+          android:paddingLeft="30dp"
+          android:paddingRight="30dp"
+          android:orientation="vertical"
+          >
+
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="Enter OTP Code"
+             android:gravity="center"
+             android:textSize="20sp"
+             android:padding="10dp"
+             android:textColor="@color/Dark_Blue"
+             android:fontFamily="sans-serif-black"
+             />
+
+         <EditText
+             android:id="@+id/ed_OTP"
+             android:layout_width="200dp"
+             android:layout_height="wrap_content"
+             android:hint="Enter OTP code for Confirmation"
+             android:textAlignment="center"
+             android:gravity="center_horizontal"
+             android:textSize="12sp"
+             android:padding="10dp"
+             android:textColorHint="#CD3B5774"
+             />
+
+         <Button
+             android:id="@+id/btnSubmit_Phone"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Submit"
+             android:textAllCaps="false"
+             android:padding="15dp"
+             android:layout_marginTop="10dp"
+             android:background="@color/Light_Blue"
+             android:textColor="@color/white"
+
+
+             />
+
+      </LinearLayout>
+
+
+   </LinearLayout>
+
+</FrameLayout>

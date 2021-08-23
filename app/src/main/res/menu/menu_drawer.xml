@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item android:id="@+id/nav_profile"
+        android:title="Profile"
+        android:icon="@drawable/nav_profile"
+        android:iconTint="@color/Dark_Blue"
+        />
+
+    <item android:id="@+id/nav_setting"
+        android:title="Setting"
+        android:icon="@drawable/ic_settings"
+        android:iconTint="@color/Dark_Blue"
+        />
+
+    <item android:id="@+id/nav_payMethod"
+        android:title="Payment Method"
+        android:icon="@drawable/ic_payment_method"
+        android:iconTint="@color/Dark_Blue"
+        />
+
+    <item android:id="@+id/nav_connect_friends"
+        android:title="Connect with Friends"
+        android:icon="@drawable/ic_connect_friends"
+        android:iconTint="@color/Dark_Blue"
+        />
+
+    <item android:id="@+id/nav_share_App"
+        android:title="Share App with Friends"
+        android:icon="@drawable/ic_app_share"
+        android:iconTint="@color/Dark_Blue"
+        />
+
+    <item android:id="@+id/nav_Logout"
+        android:title="Logout"
+        android:icon="@drawable/ic_settings"
+        android:iconTint="@color/Dark_Blue"
+        />
+</menu>

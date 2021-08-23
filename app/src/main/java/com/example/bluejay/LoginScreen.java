@@ -48,6 +48,8 @@ public class LoginScreen extends AppCompatActivity {
     private GoogleSignInClient mGoogleSignInClient;
     private FirebaseAuth mAuth;
 
+
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -170,6 +172,17 @@ public class LoginScreen extends AppCompatActivity {
                 });
 
 
+
+            }
+        });
+
+
+        tv_login_signbyphone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent=new Intent(LoginScreen.this,FragPhoneLogin.class);
+                startActivity(intent);
 
             }
         });

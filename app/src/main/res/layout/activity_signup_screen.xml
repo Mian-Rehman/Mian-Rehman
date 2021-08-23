@@ -41,9 +41,11 @@
                android:layout_width="match_parent"
                android:layout_height="50dp"
                android:hint="First/Lst Name"
+               android:inputType="textPersonName"
                android:textColorHint="#B2FFFFFF"
                android:textColor="@color/white"
-               android:drawablePadding="10dp"
+               android:paddingLeft="12dp"
+               android:drawablePadding="17dp"
                android:drawableLeft="@drawable/username_signup" />
 
            <EditText
@@ -52,9 +54,10 @@
                android:layout_width="match_parent"
                android:layout_height="50dp"
                android:hint="Username"
+               android:paddingLeft="12dp"
                android:textColorHint="#B2FFFFFF"
                android:textColor="@color/white"
-               android:drawablePadding="10dp"
+               android:drawablePadding="17dp"
                android:drawableLeft="@drawable/ic_supervised_user" />
 
            <EditText
@@ -66,34 +69,51 @@
                android:hint="Email"
                android:textColorHint="#B2FFFFFF"
                android:textColor="@color/white"
-               android:drawablePadding="10dp"
+               android:drawablePadding="17dp"
+               android:paddingLeft="12dp"
                android:drawableLeft="@drawable/ic_email" />
 
 
 
            <EditText
                android:id="@+id/ed_PhoneNo"
-               android:inputType="textEmailAddress"
+               android:inputType="numberSigned"
                android:layout_marginTop="5dp"
                android:layout_width="match_parent"
+               android:maxLength="11"
                android:layout_height="50dp"
-               android:hint="Email"
+               android:hint="PhoneNo"
                android:textColorHint="#B2FFFFFF"
                android:textColor="@color/white"
-               android:drawablePadding="10dp"
-               android:drawableLeft="@drawable/ic_email" />
+               android:drawablePadding="17dp"
+               android:paddingStart="12dp"
+               android:drawableLeft="@drawable/ic_phone"
+               android:paddingLeft="12dp" />
 
-           <EditText
-               android:id="@+id/ed_password"
-               android:layout_marginTop="5dp"
+
+           <com.google.android.material.textfield.TextInputLayout
                android:layout_width="match_parent"
-               android:layout_height="50dp"
+               android:layout_height="wrap_content"
+               app:startIconDrawable="@drawable/ic_lock"
+               app:startIconTint="@color/white"
+               app:hintTextColor="@color/white"
+               app:passwordToggleEnabled="true"
                android:hint="Password"
-               android:inputType="textPassword"
+               android:theme="@style/Animation.Design.BottomSheetDialog"
+               app:counterTextColor="@color/white"
+               app:endIconTint="#D0FFFFFF"
                android:textColorHint="#B2FFFFFF"
-               android:textColor="@color/white"
-               android:drawablePadding="10dp"
-               android:drawableLeft="@drawable/ic_lock" />
+               >
+               <EditText
+                   android:id="@+id/ed_password"
+                   android:layout_marginTop="5dp"
+                   android:layout_width="match_parent"
+                   android:layout_height="50dp"
+                   android:inputType="textPassword"
+               />
+           </com.google.android.material.textfield.TextInputLayout>
+
+
 
 
            <EditText
