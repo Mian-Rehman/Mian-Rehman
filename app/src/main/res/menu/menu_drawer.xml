@@ -3,7 +3,7 @@
 
 
     <item android:id="@+id/nav_profile"
-        android:title="Profile"
+        android:title="My Profile"
         android:icon="@drawable/nav_profile"
         android:iconTint="@color/Dark_Blue"
         />

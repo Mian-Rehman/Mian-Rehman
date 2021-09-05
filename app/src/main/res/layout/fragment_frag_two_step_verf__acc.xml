@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/Frame_TwoStep"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Frag_twoStepVerf_Acc">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:background="@color/Dark_Blue"
+
+                >
+
+                <ImageView
+                    android:id="@+id/img_twoStep_back"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_arrow_back"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textColor="@color/white"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="30dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Two Step Verification"
+                    />
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#D3E6E9"
+                android:padding="30dp"
+
+                >
+
+
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/twostepverification"
+                    android:layout_gravity="center"
+                    />
+
+
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp"
+                android:paddingTop="20dp"
+
+                >
+
+
+                <LinearLayout
+                    android:id="@+id/Delete_Account_lay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="5dp"
+                    android:layout_marginTop="15dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="5dp"
+                    android:layout_marginBottom="50dp"
+                    android:paddingRight="5dp"
+                    android:orientation="vertical"
+                    >
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="For add security, enable two-step verification,
+which require a PIN when registering your phone
+number with BLUEJAY again "
+                android:textSize="14sp"
+                android:gravity="top"
+                android:layout_gravity="top"
+                android:fontFamily="sans-serif-black"
+                android:textColor="@color/Dark_Blue"
+                />
+
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="bottom"
+                    android:gravity="bottom"
+                    android:paddingBottom="20dp"
+                    android:layout_marginBottom="30dp"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/btn_twoStep"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|bottom"
+                        android:backgroundTint="@color/Gold"
+                        android:padding="15dp"
+                        android:text="Enable"
+                        android:textAlignment="center"
+                        android:textColor="@color/Dark_Blue"
+                        tools:ignore="RtlCompat" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+
+
+
+
+        </LinearLayout>
+
+
+
+
+    </RelativeLayout>
+
+</FrameLayout>

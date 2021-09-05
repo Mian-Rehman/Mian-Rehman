@@ -4,18 +4,18 @@
 
     <item
         android:icon="@drawable/ic_school"
-        android:id="@+id/dashboard_bottombar"
+        android:id="@+id/bottom_Learning"
         android:title="Learning" />
 
     <item
         android:icon="@drawable/nav_profile"
-        android:id="@+id/leaderboard_bottombar"
+        android:id="@+id/bottom_Profile"
         android:title="Profile"
         />
 
     <item
         android:icon="@drawable/ic_notifications"
-        android:id="@+id/profile_bottombar"
+        android:id="@+id/bottom_notification"
         android:title="notification"
         />
 

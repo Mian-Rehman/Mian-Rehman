@@ -167,16 +167,18 @@
             android:background="#00FFFFFF"
             android:drawableLeft="@drawable/google_icon" />
 
+
         <Button
-            android:id="@+id/btn_Facrbook"
+            android:id="@+id/btn_Facebook"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:paddingLeft="10dp"
-            android:layout_marginLeft="10dp"
             android:textAllCaps="false"
+            android:layout_marginLeft="10dp"
             android:textColor="@color/white"
+            android:paddingLeft="10dp"
             android:background="#00FFFFFF"
             android:drawableLeft="@drawable/facebook_icon" />
+
 
         <Button
             android:id="@+id/btn_Twitter"

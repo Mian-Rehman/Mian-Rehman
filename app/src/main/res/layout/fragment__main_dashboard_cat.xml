@@ -56,7 +56,7 @@
                     android:src="@drawable/book"
                     />
                 <TextView
-                    android:text="PreKids"
+                    android:text="Pre Kids"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="18sp"
@@ -74,7 +74,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/artifical_inteligence_main"
+            android:id="@+id/k_12_Grade"
             android:layout_width="40dp"
             android:layout_height="180dp"
             android:background="@color/Gold"

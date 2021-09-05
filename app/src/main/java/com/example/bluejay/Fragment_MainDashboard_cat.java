@@ -2,11 +2,14 @@ package com.example.bluejay;
 
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridLayout;
+import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -65,7 +68,8 @@ public class Fragment_MainDashboard_cat extends Fragment {
 
     //Declare Area
 
-
+    GridLayout mainGridLayout;
+    CardView card_PreKids,k_12_Grade;
 
 
     @Override
@@ -76,9 +80,27 @@ public class Fragment_MainDashboard_cat extends Fragment {
         //coding Area
 
 
+        mainGridLayout= v.findViewById(R.id.mainGridLayout);
+
+        //Cardview Id
+        card_PreKids= v.findViewById(R.id.card_PreKids);
+        k_12_Grade= v.findViewById(R.id.k_12_Grade);
 
 
+        card_PreKids.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(), "Kids", Toast.LENGTH_SHORT).show();
+            }
+        });
 
+
+        k_12_Grade.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(), "K-12 Grade", Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
 

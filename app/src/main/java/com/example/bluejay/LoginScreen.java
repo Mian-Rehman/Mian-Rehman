@@ -11,6 +11,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -82,7 +83,7 @@ public class LoginScreen extends AppCompatActivity {
         btn_Login=findViewById(R.id.btn_Login);
         btn_Signup=findViewById(R.id.btn_Signup);
         btn_Google=findViewById(R.id.btn_Google);
-        btn_Facrbook=findViewById(R.id.btn_Facrbook);
+        btn_Facrbook=findViewById(R.id.btn_Facebook);
         btn_Twitter=findViewById(R.id.btn_Twitter);
 
 
@@ -102,13 +103,28 @@ public class LoginScreen extends AppCompatActivity {
         });
 
 
+
         btn_Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-
                 String LoginUserName=ed_login_user.getText().toString().trim();
                 String LoginPassword=ed_login_pass.getText().toString();
+
+
+                if (TextUtils.isEmpty(LoginUserName))
+                {
+                    ed_login_user.setError("invalid username");
+                    ed_login_user.requestFocus();
+                    ed_login_user.setText("");
+                }
+
+                if (TextUtils.isEmpty(LoginPassword))
+                {
+                    ed_login_pass.setError("invalid Password");
+                    ed_login_pass.requestFocus();
+                    ed_login_pass.setText("");
+                }
 
                 Query check_user_Details =reference.orderByChild("userName").equalTo(LoginUserName);
 
@@ -116,7 +132,9 @@ public class LoginScreen extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                        if (snapshot.exists()) {
+
+                        if (snapshot.exists())
+                        {
                             String checkUser = snapshot.child(LoginUserName).child("userName").getValue(String.class);
                             String checkpass = snapshot.child(LoginUserName).child("userPassword").getValue(String.class);
 
@@ -133,9 +151,9 @@ public class LoginScreen extends AppCompatActivity {
                                     SharedPreferences.Editor ed=sp.edit();
                                     ed.putString("currentUserName",user.getUserName());
                                     ed.putString("currentName",user.getName());
-                                    ed.putString("currentPhoneNo",user.getUserPhoneNo());
                                     ed.putString("currentEmail",user.getUserEmail());
                                     ed.putString("currentPassword",user.getUserPassword());
+                                    ed.putString("currentPhoneNo",user.getUserPhoneNo());
                                     ed.apply();
                                     Intent intent=new Intent(LoginScreen.this,MainDashboard.class);
                                     startActivity(intent);
@@ -152,7 +170,7 @@ public class LoginScreen extends AppCompatActivity {
 
                             }
                             else
-                                {
+                            {
                                 ed_login_user.setError("incorrect username");
                                 ed_login_user.requestFocus();
                                 ed_login_user.setText("");
@@ -177,6 +195,7 @@ public class LoginScreen extends AppCompatActivity {
         });
 
 
+
         tv_login_signbyphone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -191,7 +210,10 @@ public class LoginScreen extends AppCompatActivity {
         btn_Facrbook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(LoginScreen.this, "Facebook Button Demo app", Toast.LENGTH_SHORT).show();
+
+                Intent fb_intent=new Intent(LoginScreen.this,FacebookAuth.class);
+                fb_intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivity(fb_intent);
             }
         });
 
@@ -210,7 +232,12 @@ public class LoginScreen extends AppCompatActivity {
         btn_Twitter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(LoginScreen.this, "Twitter button demo app", Toast.LENGTH_SHORT).show();
+
+                Intent intent=new Intent(LoginScreen.this,TwitterAuthActivty.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivity(intent);
+
+               // Toast.makeText(LoginScreen.this, "Twitter button demo app", Toast.LENGTH_SHORT).show();
             }
         });
 
